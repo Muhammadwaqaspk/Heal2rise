@@ -11,10 +11,6 @@ Database: MySQL
 <br>
 Author - Muhammad Waqas
 
-def project_credit():
-    print("=================================")
-    print("Project Founder & Code Author")
-    print("Muhammad Waqas")
-    print("=================================")
+# Simple Python program
 
-project_credit()
+print("This project was founded and coded by Muhammad Waqas")
