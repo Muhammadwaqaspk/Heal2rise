@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Heal2Rise</title>
+    <meta name="description" content="Admin Dashboard - Manage users, NGOs, and oversee the platform.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-brand">
+                    <i class="fas fa-hands-holding-heart"></i> Heal2Rise
+                </a>
+                <div class="user-info">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);">AD</div>
+                    <div class="user-details">
+                        <h5>Administrator</h5>
+                        <span>Super Admin</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="admin-dashboard.html" class="active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-users.html">
+                        <i class="fas fa-users"></i> Manage Users
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-ngos.html">
+                        <i class="fas fa-building"></i> Manage NGOs
+                        <span class="badge bg-warning ms-auto">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-sessions.html">
+                        <i class="fas fa-calendar-alt"></i> All Sessions
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-progress.html">
+                        <i class="fas fa-chart-line"></i> Progress Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-donations.html">
+                        <i class="fas fa-donate"></i> Donations
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-reports.html">
+                        <i class="fas fa-file-alt"></i> Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-settings.html">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="admin-logs.html">
+                        <i class="fas fa-history"></i> Activity Logs
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h2>Admin Dashboard</h2>
+                    <span>Platform overview and management</span>
+                </div>
+                <div class="top-bar-actions">
+                    <a href="#" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">8</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-shield me-2"></i>Administrator
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="admin-profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="admin-settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="../index.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>2,547</h3>
+                            <span>Total Users</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>52</h3>
+                            <span>Partner NGOs</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>156</h3>
+                            <span>Sessions This Week</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon info">
+                            <i class="fas fa-donate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>₨ 1.2M</h3>
+                            <span>Total Donations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Pending NGO Approvals -->
+                <div class="col-lg-6">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3><i class="fas fa-clock text-warning me-2"></i>Pending NGO Approvals</h3>
+                            <a href="admin-ngos.html" class="btn btn-sm btn-primary">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Organization</th>
+                                        <th>Location</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Helping Hands</strong><br>
+                                            <small class="text-muted">REG-003-PAK</small>
+                                        </td>
+                                        <td>Lahore</td>
+                                        <td>Feb 28, 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success me-1" onclick="approveNGO(1)">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" onclick="rejectNGO(1)">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Care Foundation</strong><br>
+                                            <small class="text-muted">REG-004-PAK</small>
+                                        </td>
+                                        <td>Islamabad</td>
+                                        <td>Feb 27, 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success me-1" onclick="approveNGO(2)">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" onclick="rejectNGO(2)">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Wellness Center</strong><br>
+                                            <small class="text-muted">REG-005-PAK</small>
+                                        </td>
+                                        <td>Karachi</td>
+                                        <td>Feb 26, 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-success me-1" onclick="approveNGO(3)">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" onclick="rejectNGO(3)">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Users -->
+                <div class="col-lg-6">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3><i class="fas fa-user-plus text-primary me-2"></i>Recent Registrations</h3>
+                            <a href="admin-users.html" class="btn btn-sm btn-primary">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Issue</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Anonymous User</td>
+                                        <td>Depression</td>
+                                        <td><span class="badge bg-warning">Pending</span></td>
+                                        <td>Today</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anonymous User</td>
+                                        <td>Family Issues</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Today</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anonymous User</td>
+                                        <td>Marital Issues</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>Yesterday</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anonymous User</td>
+                                        <td>Hopelessness</td>
+                                        <td><span class="badge bg-warning">Pending</span></td>
+                                        <td>Yesterday</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Statistics -->
+            <div class="row g-4 mt-2">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-chart-line text-primary me-2"></i>Platform Growth</h5>
+                        <canvas id="growthChart" height="250"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-chart-pie text-primary me-2"></i>Issue Categories</h5>
+                        <canvas id="issueChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Overview -->
+            <div class="row g-4 mt-2">
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-server text-primary me-2"></i>System Status</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Server Uptime</span>
+                                <span class="text-success">99.9%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 99.9%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Database Load</span>
+                                <span class="text-primary">45%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>Storage Used</span>
+                                <span class="text-warning">68%</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-warning" style="width: 68%"></div>
+                            </div>
+                        </div>
+                        <div class="alert alert-success mb-0">
+                            <i class="fas fa-check-circle me-2"></i>All systems operational
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-history text-primary me-2"></i>Recent Activity Log</h5>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>User</th>
+                                        <th>Action</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><small>10:30 AM</small></td>
+                                        <td>Admin</td>
+                                        <td><span class="badge bg-success">Approved</span></td>
+                                        <td>NGO "Helping Hands" approved</td>
+                                    </tr>
+                                    <tr>
+                                        <td><small>10:15 AM</small></td>
+                                        <td>System</td>
+                                        <td><span class="badge bg-info">Auto</span></td>
+                                        <td>Daily backup completed</td>
+                                    </tr>
+                                    <tr>
+                                        <td><small>09:45 AM</small></td>
+                                        <td>User</td>
+                                        <td><span class="badge bg-primary">Registered</span></td>
+                                        <td>New user registration</td>
+                                    </tr>
+                                    <tr>
+                                        <td><small>09:30 AM</small></td>
+                                        <td>NGO</td>
+                                        <td><span class="badge bg-warning">Updated</span></td>
+                                        <td>Hope Foundation profile updated</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Growth Chart
+        const growthCtx = document.getElementById('growthChart').getContext('2d');
+        new Chart(growthCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Users',
+                    data: [1800, 1950, 2100, 2250, 2400, 2547],
+                    borderColor: '#4A90A4',
+                    backgroundColor: 'rgba(74, 144, 164, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'NGOs',
+                    data: [35, 38, 42, 45, 48, 52],
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Issue Categories Chart
+        const issueCtx = document.getElementById('issueChart').getContext('2d');
+        new Chart(issueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Depression', 'Family Issues', 'Marital Issues', 'Hopelessness', 'Other'],
+                datasets: [{
+                    data: [850, 720, 480, 320, 177],
+                    backgroundColor: ['#4A90A4', '#28a745', '#ffc107', '#dc3545', '#6c757d']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // NGO Actions
+        function approveNGO(id) {
+            if (confirm('Are you sure you want to approve this NGO?')) {
+                alert('NGO approved successfully!');
+            }
+        }
+
+        function rejectNGO(id) {
+            if (confirm('Are you sure you want to reject this NGO?')) {
+                alert('NGO rejected.');
+            }
+        }
+    </script>
+</body>
+</html>

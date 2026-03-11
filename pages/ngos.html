@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partner NGOs - Heal2Rise </title>
+    <meta name="description" content="View all partner NGOs of Heal2Rise  - Organizations dedicated to mental health support and rehabilitation.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolled">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/hopeaid-logo.jpeg" alt="HopeAid" style="width: 35px; height: 35px; border-radius: 50%; margin-right: 10px;">
+                Heal2Rise
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ngos.html">Our NGOs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="donate.html">Donate</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 mt-5" style="background: linear-gradient(135deg, #4A90A4 0%, #3A7A8C 100%);">
+        <div class="container py-4">
+            <div class="text-center text-white">
+                <h1 class="display-5 fw-bold">Our Partner NGOs</h1>
+                <p class="lead mb-0">Trusted organizations dedicated to your well-being</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGOs List -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" id="searchNGO" placeholder="Search NGOs...">
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <select class="form-select" id="filterCity">
+                        <option value="">All Cities</option>
+                        <option value="karachi">Karachi</option>
+                        <option value="lahore">Lahore</option>
+                        <option value="islamabad">Islamabad</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <select class="form-select" id="filterService">
+                        <option value="">All Services</option>
+                        <option value="counseling">Counseling</option>
+                        <option value="rehabilitation">Rehabilitation</option>
+                        <option value="skill_training">Skill Training</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- NGOs Grid -->
+            <div class="row g-4" id="ngosGrid">
+                <!-- NGO 1 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="karachi" data-services="counseling rehabilitation">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" style="height: 150px;">
+                            <i class="fas fa-heart fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hope Foundation</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Karachi, Pakistan
+                            </p>
+                            <p class="card-text">Dedicated to mental health support and rehabilitation services for individuals facing depression and hopelessness.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Counseling</span>
+                                <span class="badge bg-success">Rehabilitation</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal1">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO 2 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="karachi" data-services="family_counseling legal_aid">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 150px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-hands-holding-child fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Care & Cure NGO</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Karachi, Pakistan
+                            </p>
+                            <p class="card-text">Providing professional support for individuals facing family and marital issues with counseling and legal aid.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-info me-1">Family Counseling</span>
+                                <span class="badge bg-warning text-dark">Legal Aid</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal2">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO 3 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="lahore" data-services="skill_training employment">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 150px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-lightbulb fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">New Beginnings</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Lahore, Pakistan
+                            </p>
+                            <p class="card-text">Empowering individuals through skill development, vocational training, and employment assistance programs.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Skills Training</span>
+                                <span class="badge bg-success">Employment</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal3">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO 4 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="islamabad" data-services="counseling rehabilitation">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 150px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-hand-holding-heart fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Helping Hands</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Islamabad, Pakistan
+                            </p>
+                            <p class="card-text">Comprehensive mental health services including counseling, therapy, and residential rehabilitation programs.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Counseling</span>
+                                <span class="badge bg-success">Rehabilitation</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal4">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO 5 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="karachi" data-services="counseling skill_training">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 150px; background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);">
+                            <i class="fas fa-sun fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sunrise Support</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Karachi, Pakistan
+                            </p>
+                            <p class="card-text">Specialized in youth counseling and skill development programs for young adults facing life challenges.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Counseling</span>
+                                <span class="badge bg-info">Skill Training</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal5">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NGO 6 -->
+                <div class="col-lg-4 col-md-6 ngo-card-wrapper" data-city="lahore" data-services="family_counseling counseling">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top d-flex align-items-center justify-content-center" style="height: 150px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                            <i class="fas fa-users fa-4x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Family First</h5>
+                            <p class="text-muted mb-2">
+                                <i class="fas fa-map-marker-alt me-1"></i>Lahore, Pakistan
+                            </p>
+                            <p class="card-text">Focused on family counseling, mediation services, and relationship therapy for families in crisis.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-info me-1">Family Counseling</span>
+                                <span class="badge bg-primary">Counseling</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" data-bs-toggle="modal" data-bs-target="#ngoModal6">
+                                <i class="fas fa-info-circle me-1"></i>View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGO Detail Modals -->
+    <div class="modal fade" id="ngoModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-heart me-2"></i>Hope Foundation</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="height: 150px;">
+                                <i class="fas fa-heart fa-4x text-white"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h6>About</h6>
+                            <p>Hope Foundation is dedicated to mental health support and rehabilitation services. We provide comprehensive counseling and therapy for individuals facing depression, anxiety, and hopelessness.</p>
+                            <h6>Services</h6>
+                            <ul>
+                                <li>Individual Counseling</li>
+                                <li>Group Therapy Sessions</li>
+                                <li>Residential Rehabilitation</li>
+                                <li>Crisis Intervention</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><i class="fas fa-map-marker-alt me-2 text-primary"></i>123 Main Street, Karachi</p>
+                            <p><i class="fas fa-phone me-2 text-primary"></i>+92-21-1234567</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><i class="fas fa-envelope me-2 text-primary"></i>contact@hopefoundation.org</p>
+                            <p><i class="fas fa-globe me-2 text-primary"></i>www.hopefoundation.org</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="donate.html" class="btn btn-primary"><i class="fas fa-donate me-2"></i>Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <img src="../assets/images/hopeaid-logo.jpeg" alt="HopeAid" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                        Heal2Rise
+                    </div>
+                    <p class="footer-about">
+                        Heal2Rise  is a confidential platform dedicated to supporting individuals 
+                        facing depression, hopelessness, and family issues.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://face.com/iWaqaz" target="_blank" title="Face"><i class="fab fa-face-f"></i></a>
+                        <a href="https://instagram.com/i_waqaz" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/in/muhammad-waqas-6859a4177" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://tiktok.com/@iwaqaz" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/Waqas_world" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="ngos.html">Our NGOs</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i><span>bc220207915mwa@vu.edu.pk</span></li>
+                        <li><i class="fas fa-envelope"></i><span>mh1481899@gmail.com</span></li>
+                        <li><i class="fas fa-phone"></i><span>+92 306 2725746</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Muzaffarabad Colony, Karachi, Pakistan</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2025 Heal2Rise . All Rights Reserved.</p>
+                <p class="mt-2 mb-0 text-white-50">
+                    <small>Founded by Muhammad Waqas</small>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Search and Filter functionality
+        const searchInput = document.getElementById('searchNGO');
+        const cityFilter = document.getElementById('filterCity');
+        const serviceFilter = document.getElementById('filterService');
+        const ngoCards = document.querySelectorAll('.ngo-card-wrapper');
+
+        function filterNGOs() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const city = cityFilter.value;
+            const service = serviceFilter.value;
+
+            ngoCards.forEach(card => {
+                const cardCity = card.dataset.city;
+                const cardServices = card.dataset.services;
+                const cardText = card.textContent.toLowerCase();
+
+                const matchesSearch = cardText.includes(searchTerm);
+                const matchesCity = !city || cardCity === city;
+                const matchesService = !service || cardServices.includes(service);
+
+                if (matchesSearch && matchesCity && matchesService) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterNGOs);
+        cityFilter.addEventListener('change', filterNGOs);
+        serviceFilter.addEventListener('change', filterNGOs);
+    </script>
+</body>
+</html>

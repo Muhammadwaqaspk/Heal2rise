@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Heal2Rise </title>
+    <meta name="description" content="User Dashboard - Track your progress, manage counseling sessions, and connect with your support team.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-brand">
+                    <i class="fas fa-hands-holding-heart"></i> Heal2Rise
+                </a>
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <h5>John Doe</h5>
+                        <span>User</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="user-dashboard.html" class="active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="user-profile.html">
+                        <i class="fas fa-user"></i> My Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="user-sessions.html">
+                        <i class="fas fa-calendar-alt"></i> Counseling Sessions
+                    </a>
+                </li>
+                <li>
+                    <a href="user-progress.html">
+                        <i class="fas fa-chart-line"></i> Progress Tracking
+                    </a>
+                </li>
+                <li>
+                    <a href="user-skills.html">
+                        <i class="fas fa-graduation-cap"></i> Skill Development
+                    </a>
+                </li>
+                <li>
+                    <a href="user-messages.html">
+                        <i class="fas fa-envelope"></i> Messages
+                        <span class="badge bg-danger ms-auto">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="user-ngo.html">
+                        <i class="fas fa-building"></i> My NGO
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h2>Dashboard</h2>
+                    <span>Welcome back! Here's your healing journey overview.</span>
+                </div>
+                <div class="top-bar-actions">
+                    <a href="user-messages.html" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-2"></i>John Doe
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="user-profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="user-settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="../index.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <span>Total Sessions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>2</h3>
+                            <span>Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon info">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>75%</h3>
+                            <span>Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Current Status -->
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-info-circle text-primary me-2"></i>Current Status</h5>
+                        <div class="text-center">
+                            <div class="progress-circle mb-3" style="width: 150px; height: 150px; margin: 0 auto;">
+                                <svg viewBox="0 0 100 100" style="transform: rotate(-90deg);">
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#e9ecef" stroke-width="8"/>
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="#4A90A4" stroke-width="8"
+                                            stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round"/>
+                                </svg>
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                    <span class="h3 mb-0">75%</span>
+                                </div>
+                            </div>
+                            <h6 class="text-success mb-2"><i class="fas fa-check-circle me-1"></i>Under Counseling</h6>
+                            <p class="text-muted small">You're making great progress! Keep up the good work.</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Assigned NGO</span>
+                            <span class="fw-bold text-primary">Hope Foundation</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span>Support Member</span>
+                            <span class="fw-bold">Dr. Sarah Ahmed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions -->
+                <div class="col-lg-8">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3><i class="fas fa-calendar-alt text-primary me-2"></i>Upcoming Sessions</h3>
+                            <a href="user-sessions.html" class="btn btn-sm btn-primary">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date & Time</th>
+                                        <th>Counselor</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Mar 5, 2025</strong><br>
+                                            <small class="text-muted">10:00 AM - 11:00 AM</small>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">SA</div>
+                                                <span>Dr. Sarah Ahmed</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-info"><i class="fas fa-video me-1"></i>Video</span></td>
+                                        <td><span class="status-badge status-active">Scheduled</span></td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#joinSessionModal">
+                                                <i class="fas fa-video me-1"></i>Join
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Mar 8, 2025</strong><br>
+                                            <small class="text-muted">2:00 PM - 3:00 PM</small>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">MK</div>
+                                                <span>Mr. Kamran Khan</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-warning text-dark"><i class="fas fa-phone me-1"></i>Audio</span></td>
+                                        <td><span class="status-badge status-pending">Pending</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-secondary" disabled>Wait</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <!-- Progress Chart -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-chart-line text-primary me-2"></i>Progress Overview</h5>
+                        <canvas id="progressChart" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-history text-primary me-2"></i>Recent Activities</h5>
+                        <div class="timeline">
+                            <div class="d-flex mb-3 pb-3 border-bottom">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Counseling Session Completed</h6>
+                                    <p class="text-muted small mb-1">Session with Dr. Sarah Ahmed - Depression Management</p>
+                                    <small class="text-muted">Feb 28, 2025 at 10:00 AM</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3 pb-3 border-bottom">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Enrolled in Skill Program</h6>
+                                    <p class="text-muted small mb-1">Basic Computer Skills - Hope Foundation</p>
+                                    <small class="text-muted">Feb 25, 2025 at 3:30 PM</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3 pb-3 border-bottom">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Progress Assessment</h6>
+                                    <p class="text-muted small mb-1">Monthly progress review completed - Score: 8/10</p>
+                                    <small class="text-muted">Feb 20, 2025 at 11:00 AM</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Connected with NGO</h6>
+                                    <p class="text-muted small mb-1">Successfully connected with Hope Foundation</p>
+                                    <small class="text-muted">Feb 15, 2025 at 9:00 AM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills in Progress -->
+            <div class="row g-4 mt-2">
+                <div class="col-12">
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0"><i class="fas fa-graduation-cap text-primary me-2"></i>Skills in Progress</h5>
+                            <a href="user-skills.html" class="btn btn-sm btn-primary">View All Skills</a>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Basic Computer Skills</h6>
+                                        <p class="text-muted small">Hope Foundation</p>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 65%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted">65% Complete</small>
+                                            <small class="text-primary">Week 3 of 4</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Communication Skills</h6>
+                                        <p class="text-muted small">Care & Cure NGO</p>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 30%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted">30% Complete</small>
+                                            <small class="text-success">Week 2 of 6</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Stress Management</h6>
+                                        <p class="text-muted small">Hope Foundation</p>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-info" style="width: 100%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted">100% Complete</small>
+                                            <span class="badge bg-success">Completed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="row g-4 mt-2">
+                <div class="col-12">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-bolt text-primary me-2"></i>Quick Actions</h5>
+                        <div class="row g-3">
+                            <div class="col-lg-3 col-md-6">
+                                <a href="#" class="btn btn-outline-primary w-100 py-3" data-bs-toggle="modal" data-bs-target="#SessionModal">
+                                    <i class="fas fa-calendar-plus d-block mb-2 fa-lg"></i>
+                                     Session
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a href="user-messages.html" class="btn btn-outline-success w-100 py-3">
+                                    <i class="fas fa-envelope d-block mb-2 fa-lg"></i>
+                                    Send Message
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a href="user-skills.html" class="btn btn-outline-info w-100 py-3">
+                                    <i class="fas fa-graduation-cap d-block mb-2 fa-lg"></i>
+                                    Enroll in Skills
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a href="user-progress.html" class="btn btn-outline-warning w-100 py-3">
+                                    <i class="fas fa-chart-bar d-block mb-2 fa-lg"></i>
+                                    View Progress
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Join Session Modal -->
+    <div class="modal fade" id="joinSessionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Join Counseling Session</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-video fa-4x text-primary"></i>
+                    </div>
+                    <h5>Session with Dr. Sarah Ahmed</h5>
+                    <p class="text-muted">March 5, 2025 at 10:00 AM</p>
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        This session will be conducted via Zoom
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <a href="https://zoom.us/j/example" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-video me-2"></i>Join Session
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Session Modal -->
+    <div class="modal fade" id="SessionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> New Session</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="SessionForm">
+                        <div class="mb-3">
+                            <label class="form-label">Select Counselor</label>
+                            <select class="form-select" required>
+                                <option value="">Choose counselor...</option>
+                                <option value="1">Dr. Sarah Ahmed - Psychiatrist</option>
+                                <option value="2">Mr. Kamran Khan - Counselor</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Session Type</label>
+                            <select class="form-select" required>
+                                <option value="">Select type...</option>
+                                <option value="video">Video Call</option>
+                                <option value="audio">Audio Call</option>
+                                <option value="chat">Chat</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Notes (Optional)</label>
+                            <textarea class="form-control" rows="3" placeholder="Any specific topics you'd like to discuss..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" form="SessionForm">
+                        <i class="fas fa-calendar-check me-2"></i>Request Session
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Progress Chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                    label: 'Mental Health Score',
+                    data: [4, 5, 6, 6, 7, 8],
+                    borderColor: '#4A90A4',
+                    backgroundColor: 'rgba(74, 144, 164, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Confidence Level',
+                    data: [3, 4, 5, 6, 7, 8],
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        //  session form
+        document.getElementById('SessionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Session request submitted! You will receive a confirmation email shortly.');
+            bootstrap.Modal.getInstance(document.getElementById('SessionModal')).hide();
+            this.reset();
+        });
+    </script>
+</body>
+</html>

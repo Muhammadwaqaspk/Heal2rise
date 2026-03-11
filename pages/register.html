@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Heal2Rise </title>
+    <meta name="description" content="Register on Heal2Rise  - Get confidential support for depression, family issues, and more.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="auth-card" style="max-width: 700px;">
+            <div class="auth-logo">
+                <a href="../index.html">
+                    <h2><img src="../assets/images/hopeaid-logo.jpeg" alt="HopeAid" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; vertical-align: middle;"> Heal2Rise</h2>
+                </a>
+                <p class="text-muted mt-2">Create your confidential account</p>
+            </div>
+            
+            <!-- Progress Steps -->
+            <div class="d-flex justify-content-center mb-4">
+                <div class="d-flex align-items-center">
+                    <div class="step-indicator active" data-step="1">1</div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="2">2</div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" data-step="3">3</div>
+                </div>
+            </div>
+            
+            <style>
+                .step-indicator {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #e9ecef;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    color: #6c757d;
+                }
+                .step-indicator.active {
+                    background: var(--primary-color);
+                    color: white;
+                }
+                .step-indicator.completed {
+                    background: var(--success-color);
+                    color: white;
+                }
+                .step-line {
+                    width: 60px;
+                    height: 3px;
+                    background: #e9ecef;
+                    margin: 0 10px;
+                }
+                .step-line.completed {
+                    background: var(--success-color);
+                }
+            </style>
+            
+            <form id="registerForm" action="../api/register.php" method="POST">
+                <!-- Step 1: Basic Information -->
+                <div id="step1" class="form-step">
+                    <h5 class="mb-3">Step 1: Basic Information</h5>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    <input type="text" class="form-control" name="full_name" placeholder="Enter your full name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Create password" required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password', this)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <small class="text-muted">Minimum 8 characters</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                    <input type="password" class="form-control" name="confirm_password" id="confirmPassword" placeholder="Confirm password" required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('confirmPassword', this)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <input type="tel" class="form-control" name="phone" placeholder="+92 XXX XXXXXXX">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Age</label>
+                                <input type="number" class="form-control" name="age" placeholder="Your age" min="18" max="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary" onclick="nextStep(2)">
+                            Next <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Address & Issue Details -->
+                <div id="step2" class="form-step" style="display: none;">
+                    <h5 class="mb-3">Step 2: Address & Support Needs</h5>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Address</label>
+                        <textarea class="form-control" name="address" rows="2" placeholder="Enter your address"></textarea>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" name="city" placeholder="Your city">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Country</label>
+                                <input type="text" class="form-control" name="country" value="Pakistan" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Issue Category <span class="text-danger">*</span></label>
+                        <select class="form-select" name="issue_category" required>
+                            <option value="">Select the issue you're facing</option>
+                            <option value="depression">Depression</option>
+                            <option value="hopelessness">Hopelessness</option>
+                            <option value="family_issues">Family Issues</option>
+                            <option value="marital_issues">Marital Issues</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Describe Your Situation <span class="text-danger">*</span></label>
+                        <textarea class="form-control" name="issue_description" rows="4" placeholder="Please describe what you're going through. This information is confidential and will help us connect you with the right support." required></textarea>
+                        <small class="text-muted">Your information is 100% confidential</small>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline" onclick="prevStep(1)">
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep(3)">
+                            Next <i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Emergency Contact & Agreement -->
+                <div id="step3" class="form-step" style="display: none;">
+                    <h5 class="mb-3">Step 3: Emergency Contact & Agreement</h5>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Emergency contact information is optional but recommended for your safety.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Emergency Contact Name</label>
+                                <input type="text" class="form-control" name="emergency_contact_name" placeholder="Name of emergency contact">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="form-label">Emergency Contact Phone</label>
+                                <input type="tel" class="form-control" name="emergency_contact_phone" placeholder="Phone number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="privacy_agreement" id="privacyAgreement" required>
+                            <label class="form-check-label" for="privacyAgreement">
+                                I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> and 
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a> <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="consent" id="consent" required>
+                            <label class="form-check-label" for="consent">
+                                I consent to sharing my information with registered NGOs for the purpose of receiving support and counseling services. <span class="text-danger">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline" onclick="prevStep(2)">
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-user-plus me-2"></i>Complete Registration
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="../index.html" class="text-muted">
+                    <i class="fas fa-arrow-left me-1"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>At Heal2Rise , we take your privacy very seriously. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
+                    <h6>Information We Collect</h6>
+                    <ul>
+                        <li>Personal identification information (name, email, phone)</li>
+                        <li>Demographic information (age, gender, location)</li>
+                        <li>Information about your concerns and support needs</li>
+                        <li>Emergency contact information (optional)</li>
+                    </ul>
+                    <h6>How We Protect Your Information</h6>
+                    <ul>
+                        <li>All data is encrypted and stored securely</li>
+                        <li>Access is restricted to authorized personnel only</li>
+                        <li>We never share your information with third parties without consent</li>
+                        <li>Registered NGOs only see information necessary for providing support</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms of Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>By using Heal2Rise , you agree to the following terms:</p>
+                    <h6>User Responsibilities</h6>
+                    <ul>
+                        <li>Provide accurate and truthful information</li>
+                        <li>Use the platform for its intended purpose of seeking support</li>
+                        <li>Respect the privacy and confidentiality of others</li>
+                        <li>Not misuse or abuse the services provided</li>
+                    </ul>
+                    <h6>Platform Usage</h6>
+                    <ul>
+                        <li>Services are provided free of charge to users</li>
+                        <li>We connect you with NGOs but are not responsible for their actions</li>
+                        <li>In case of emergency, please contact emergency services directly</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Agree</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        let currentStep = 1;
+
+        function nextStep(step) {
+            // Validate current step
+            if (!validateStep(currentStep)) {
+                return;
+            }
+            
+            // Hide current step
+            document.getElementById(`step${currentStep}`).style.display = 'none';
+            
+            // Show next step
+            document.getElementById(`step${step}`).style.display = 'block';
+            
+            // Update indicators
+            document.querySelector(`.step-indicator[data-step="${currentStep}"]`).classList.add('completed');
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.add('active');
+            
+            // Update lines
+            const lines = document.querySelectorAll('.step-line');
+            if (step > 1) lines[0].classList.add('completed');
+            if (step > 2) lines[1].classList.add('completed');
+            
+            currentStep = step;
+        }
+
+        function prevStep(step) {
+            // Hide current step
+            document.getElementById(`step${currentStep}`).style.display = 'none';
+            
+            // Show previous step
+            document.getElementById(`step${step}`).style.display = 'block';
+            
+            // Update indicators
+            document.querySelector(`.step-indicator[data-step="${currentStep}"]`).classList.remove('active');
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.remove('completed');
+            document.querySelector(`.step-indicator[data-step="${step}"]`).classList.add('active');
+            
+            // Update lines
+            const lines = document.querySelectorAll('.step-line');
+            if (step < 2) lines[0].classList.remove('completed');
+            if (step < 3) lines[1].classList.remove('completed');
+            
+            currentStep = step;
+        }
+
+        function validateStep(step) {
+            const currentStepEl = document.getElementById(`step${step}`);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            let valid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    field.classList.remove('is-invalid');
+                }
+            });
+            
+            // Check password match in step 1
+            if (step === 1) {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    valid = false;
+                }
+                if (password.length < 8) {
+                    alert('Password must be at least 8 characters long!');
+                    valid = false;
+                }
+            }
+            
+            return valid;
+        }
+
+        function togglePassword(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const icon = btn.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Registering...';
+            submitBtn.disabled = true;
+            
+            // Simulate registration (replace with actual API call)
+            setTimeout(() => {
+                alert('Registration successful! Please check your email to verify your account.');
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

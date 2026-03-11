@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Dashboard - Heal2Rise </title>
+    <meta name="description" content="NGO Dashboard - Manage users, counseling sessions, and track progress.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-brand">
+                    <i class="fas fa-hands-holding-heart"></i> Heal2Rise
+                </a>
+                <div class="user-info">
+                    <div class="user-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">HF</div>
+                    <div class="user-details">
+                        <h5>Hope Foundation</h5>
+                        <span>NGO Partner</span>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="ngo-dashboard.html" class="active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-profile.html">
+                        <i class="fas fa-building"></i> Organization Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-users.html">
+                        <i class="fas fa-users"></i> Assigned Users
+                        <span class="badge bg-danger ms-auto">12</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-team.html">
+                        <i class="fas fa-user-tie"></i> Team Members
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-sessions.html">
+                        <i class="fas fa-calendar-alt"></i> Sessions
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-skills.html">
+                        <i class="fas fa-graduation-cap"></i> Skill Programs
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-progress.html">
+                        <i class="fas fa-chart-line"></i> Progress Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-messages.html">
+                        <i class="fas fa-envelope"></i> Messages
+                        <span class="badge bg-danger ms-auto">5</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ngo-donations.html">
+                        <i class="fas fa-donate"></i> Donations
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h2>NGO Dashboard</h2>
+                    <span>Manage your users and track their progress</span>
+                </div>
+                <div class="top-bar-actions">
+                    <a href="ngo-messages.html" class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-building me-2"></i>Hope Foundation
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="ngo-profile.html"><i class="fas fa-building me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="ngo-settings.html"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="../index.html"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>45</h3>
+                            <span>Total Users</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>28</h3>
+                            <span>Active Cases</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <span>Today's Sessions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="dashboard-card stat-card">
+                        <div class="stat-icon info">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <span>Recovered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Pending Assignments -->
+                <div class="col-lg-6">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3><i class="fas fa-user-clock text-warning me-2"></i>Pending Assignments</h3>
+                            <a href="ngo-users.html" class="btn btn-sm btn-primary">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Issue</th>
+                                        <th>Priority</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">AU</div>
+                                                <span>Anonymous User</span>
+                                            </div>
+                                        </td>
+                                        <td>Depression</td>
+                                        <td><span class="badge bg-danger">High</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#assignModal">
+                                                <i class="fas fa-user-plus me-1"></i>Assign
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">AU</div>
+                                                <span>Anonymous User</span>
+                                            </div>
+                                        </td>
+                                        <td>Family Issues</td>
+                                        <td><span class="badge bg-warning">Medium</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#assignModal">
+                                                <i class="fas fa-user-plus me-1"></i>Assign
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">AU</div>
+                                                <span>Anonymous User</span>
+                                            </div>
+                                        </td>
+                                        <td>Marital Issues</td>
+                                        <td><span class="badge bg-danger">High</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#assignModal">
+                                                <i class="fas fa-user-plus me-1"></i>Assign
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Sessions -->
+                <div class="col-lg-6">
+                    <div class="table-card">
+                        <div class="table-header">
+                            <h3><i class="fas fa-calendar-day text-primary me-2"></i>Today's Sessions</h3>
+                            <a href="ngo-sessions.html" class="btn btn-sm btn-primary">View All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>User</th>
+                                        <th>Counselor</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>10:00 AM</strong></td>
+                                        <td>Anonymous User</td>
+                                        <td>Dr. Sarah Ahmed</td>
+                                        <td><span class="status-badge status-active">Scheduled</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>11:30 AM</strong></td>
+                                        <td>Anonymous User</td>
+                                        <td>Mr. Kamran Khan</td>
+                                        <td><span class="status-badge status-active">Scheduled</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>2:00 PM</strong></td>
+                                        <td>Anonymous User</td>
+                                        <td>Dr. Sarah Ahmed</td>
+                                        <td><span class="status-badge status-pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>3:30 PM</strong></td>
+                                        <td>Anonymous User</td>
+                                        <td>Ms. Ayesha Ali</td>
+                                        <td><span class="status-badge status-active">Scheduled</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Progress Overview -->
+            <div class="row g-4 mt-2">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-chart-line text-primary me-2"></i>User Progress Overview</h5>
+                        <canvas id="progressChart" height="250"></canvas>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-chart-pie text-primary me-2"></i>Case Distribution</h5>
+                        <canvas id="caseChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Members -->
+            <div class="row g-4 mt-2">
+                <div class="col-12">
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0"><i class="fas fa-user-tie text-primary me-2"></i>Team Members</h5>
+                            <a href="ngo-team.html" class="btn btn-sm btn-primary">Manage Team</a>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">SA</div>
+                                        <h6 class="mb-1">Dr. Sarah Ahmed</h6>
+                                        <p class="text-muted small mb-2">Psychiatrist</p>
+                                        <span class="badge bg-success">Active</span>
+                                        <div class="mt-3">
+                                            <small class="text-muted">12 Active Cases</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">KK</div>
+                                        <h6 class="mb-1">Mr. Kamran Khan</h6>
+                                        <p class="text-muted small mb-2">Counselor</p>
+                                        <span class="badge bg-success">Active</span>
+                                        <div class="mt-3">
+                                            <small class="text-muted">8 Active Cases</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-0 bg-light">
+                                    <div class="card-body text-center">
+                                        <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">AA</div>
+                                        <h6 class="mb-1">Ms. Ayesha Ali</h6>
+                                        <p class="text-muted small mb-2">Social Worker</p>
+                                        <span class="badge bg-success">Active</span>
+                                        <div class="mt-3">
+                                            <small class="text-muted">5 Active Cases</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="card border-0 bg-light border-dashed" style="border: 2px dashed #dee2e6;">
+                                    <div class="card-body text-center py-4">
+                                        <a href="ngo-add-team.html" class="text-decoration-none">
+                                            <i class="fas fa-plus-circle fa-3x text-primary mb-3"></i>
+                                            <h6 class="text-primary">Add Team Member</h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activities & Quick Actions -->
+            <div class="row g-4 mt-2">
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-history text-primary me-2"></i>Recent Activities</h5>
+                        <div class="timeline">
+                            <div class="d-flex mb-3 pb-3 border-bottom">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">New User Assigned</h6>
+                                    <p class="text-muted small mb-1">Anonymous user assigned to Dr. Sarah Ahmed</p>
+                                    <small class="text-muted">Today at 9:00 AM</small>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3 pb-3 border-bottom">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Session Completed</h6>
+                                    <p class="text-muted small mb-1">Counseling session completed successfully</p>
+                                    <small class="text-muted">Today at 10:30 AM</small>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Skill Program Enrollment</h6>
+                                    <p class="text-muted small mb-1">3 users enrolled in Basic Computer Skills</p>
+                                    <small class="text-muted">Yesterday at 3:00 PM</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="dashboard-card">
+                        <h5 class="mb-4"><i class="fas fa-bolt text-primary me-2"></i>Quick Actions</h5>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-primary w-100 py-3" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                                    <i class="fas fa-user-plus d-block mb-2 fa-lg"></i>
+                                    Add User
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-success w-100 py-3" data-bs-toggle="modal" data-bs-target="#scheduleModal">
+                                    <i class="fas fa-calendar-plus d-block mb-2 fa-lg"></i>
+                                    Schedule Session
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="ngo-progress.html" class="btn btn-outline-info w-100 py-3">
+                                    <i class="fas fa-file-alt d-block mb-2 fa-lg"></i>
+                                    Add Progress Report
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="ngo-skills.html" class="btn btn-outline-warning w-100 py-3">
+                                    <i class="fas fa-graduation-cap d-block mb-2 fa-lg"></i>
+                                    Manage Skills
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Assign User Modal -->
+    <div class="modal fade" id="assignModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Assign Team Member</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="assignForm">
+                        <div class="mb-3">
+                            <label class="form-label">Select Team Member</label>
+                            <select class="form-select" required>
+                                <option value="">Choose team member...</option>
+                                <option value="1">Dr. Sarah Ahmed - Psychiatrist</option>
+                                <option value="2">Mr. Kamran Khan - Counselor</option>
+                                <option value="3">Ms. Ayesha Ali - Social Worker</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Priority Level</label>
+                            <select class="form-select">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Notes</label>
+                            <textarea class="form-control" rows="3" placeholder="Any special instructions..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" form="assignForm">
+                        <i class="fas fa-user-plus me-2"></i>Assign
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Session Modal -->
+    <div class="modal fade" id="scheduleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Schedule New Session</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="scheduleForm">
+                        <div class="mb-3">
+                            <label class="form-label">Select User</label>
+                            <select class="form-select" required>
+                                <option value="">Choose user...</option>
+                                <option value="1">Anonymous User - Depression</option>
+                                <option value="2">Anonymous User - Family Issues</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Counselor</label>
+                            <select class="form-select" required>
+                                <option value="">Choose counselor...</option>
+                                <option value="1">Dr. Sarah Ahmed</option>
+                                <option value="2">Mr. Kamran Khan</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Date</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Time</label>
+                                    <input type="time" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Session Type</label>
+                            <select class="form-select">
+                                <option value="video">Video Call</option>
+                                <option value="audio">Audio Call</option>
+                                <option value="in_person">In Person</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" form="scheduleForm">
+                        <i class="fas fa-calendar-check me-2"></i>Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // Progress Chart
+        const progressCtx = document.getElementById('progressChart').getContext('2d');
+        new Chart(progressCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'New Cases',
+                    data: [12, 15, 18, 14, 20, 22],
+                    borderColor: '#4A90A4',
+                    backgroundColor: 'rgba(74, 144, 164, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }, {
+                    label: 'Completed Cases',
+                    data: [8, 10, 12, 15, 18, 20],
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Case Distribution Chart
+        const caseCtx = document.getElementById('caseChart').getContext('2d');
+        new Chart(caseCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Depression', 'Family Issues', 'Marital Issues', 'Hopelessness', 'Other'],
+                datasets: [{
+                    data: [15, 12, 8, 5, 5],
+                    backgroundColor: ['#4A90A4', '#28a745', '#ffc107', '#dc3545', '#6c757d']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Form submissions
+        document.getElementById('assignForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('User assigned successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('assignModal')).hide();
+        });
+
+        document.getElementById('scheduleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Session scheduled successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('scheduleModal')).hide();
+        });
+    </script>
+</body>
+</html>
