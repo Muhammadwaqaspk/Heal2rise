@@ -10,3 +10,11 @@ Backend: PHP / Node.js
 Database: MySQL 
 <br>
 Author - Muhammad Waqas
+
+def project_credit():
+    print("=================================")
+    print("Project Founder & Code Author")
+    print("Muhammad Waqas")
+    print("=================================")
+
+project_credit()
